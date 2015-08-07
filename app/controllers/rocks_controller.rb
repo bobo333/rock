@@ -1,13 +1,13 @@
 class RocksController < ApplicationController
 
-    before_action :authenticate_user!, only: [:new]
+    before_action :authenticate_user!, only: [:new, :create]
 
     def index
         @rocks = Rock.all
     end
 
     def show
-
+        @rock = Rock.find_by_id(params[:id])
     end
 
     def create

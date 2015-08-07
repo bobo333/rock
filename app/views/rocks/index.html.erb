@@ -2,9 +2,10 @@ THESE ARE SOME ROCKS
 
 <% @rocks.each do |rock|%>
     <div>
-        <div><%= rock.title %></div>
-        <div><%= rock.description%></div>
-        <div><%= rock.user.email%></div>
-        <%= image_tag rock.image.url(:thumbnail) %>
+        <div><%= link_to rock.title, rock_path(rock) %></div>
+        <div><%= rock.description %></div>
+        <div><%= rock.user.email %></div>
+        <div><%= image_tag rock.image.url(:thumbnail) %></div>
+        <div><%= link_to "Comment", new_rock_comment_path(rock_id: rock.id) %></div>
     </div>
 <% end %>

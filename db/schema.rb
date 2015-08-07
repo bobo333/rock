@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150807074152) do
+ActiveRecord::Schema.define(version: 20150807080214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "rock_comments", force: true do |t|
+    t.text     "text"
+    t.integer  "user_id"
+    t.integer  "rock_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "rock_comments", ["rock_id"], name: "index_rock_comments_on_rock_id", using: :btree
 
   create_table "rocks", force: true do |t|
     t.integer  "user_id"

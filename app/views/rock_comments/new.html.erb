@@ -1,0 +1,9 @@
+new rock comment
+
+<%= form_for @rock_comment, url: {action: "create"} do |f| %>
+
+    <%= f.text_area :text %>
+    <%= f.hidden_field :rock_id, value: @rock.id %>
+    <%= f.submit "Create" %>
+
+<% end %>

@@ -1,1 +1,10 @@
 this is a rock
+
+<div><%= @rock.title %></div>
+<div><%= @rock.description %></div>
+<div><%= image_tag @rock.image.url %></div>
+
+<% @rock.rock_comments.each do |comment| %>
+    <div><%= comment.user.email %> <%= comment.created_at %></div>
+    <div><%= comment.text %></div>
+<% end %>

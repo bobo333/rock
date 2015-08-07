@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'rocks#index'
 
-  resources :rocks, only: [:index, :show, :create, :new]
+  resources :rocks, only: [:index, :show, :new, :create]
+  resources :rock_comments, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
