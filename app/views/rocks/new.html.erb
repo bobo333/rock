@@ -1,9 +1,10 @@
 this is a new rock
 
-<%= form_for @rock, url: {action: "create"} do |f| %>
+<%= form_for @rock, url: {action: "create"}, html: {multipart: true} do |f| %>
 
     <%= f.text_field :title %>
     <%= f.text_area :description %>
+    <%= f.file_field :image %>
     <%= f.submit "Create" %>
 
 <% end %>
