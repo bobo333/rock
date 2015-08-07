@@ -1,1 +1,9 @@
 THESE ARE SOME ROCKS
+
+<% @rocks.each do |rock|%>
+    <div>
+        <div><%= rock.title %></div>
+        <div><%= rock.description%></div>
+        <div><%= rock.user.email%></div>
+    </div>
+<% end %>

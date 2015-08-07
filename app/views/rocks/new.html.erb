@@ -1,1 +1,9 @@
 this is a new rock
+
+<%= form_for @rock, url: {action: "create"} do |f| %>
+
+    <%= f.text_field :title %>
+    <%= f.text_area :description %>
+    <%= f.submit "Create" %>
+
+<% end %>
