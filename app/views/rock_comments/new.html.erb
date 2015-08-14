@@ -4,6 +4,14 @@
     </div>
 </div>
 
+<% if @rock_comment.errors.present? %>
+    <ul>
+        <% @rock_comment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
 <div class="row">
     <div class="col-sm-4">
         <%= image_tag @rock.image.url, class: "img-responsive" %>
@@ -17,7 +25,7 @@
 
             <div class="form-group">
                 <label for="new-rock-comment">Write your rock comment for "<%= @rock.title %>"</label>
-                <%= f.text_area :text, id: "new-rock-comment", class: "form-control" %>
+                <%= f.text_area :text, id: "new-rock-comment", class: "form-control", required: true %>
             </div>
             <div class="form-group">
                 <%= f.submit "Create", class: "btn btn-default" %>

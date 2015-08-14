@@ -19,11 +19,11 @@
 
             <div class="form-group">
                 <label for="new-rock-title">Rock Title</label>
-                <%= f.text_field :title, class: "form-control", id: "new-rock-title" %>
+                <%= f.text_field :title, class: "form-control", id: "new-rock-title", required: true %>
             </div>
             <div class="form-group">
                 <label for="new-rock-description">Rock Description</label>
-                <%= f.text_area :description, class: "form-control", id: "new-rock-description" %>
+                <%= f.text_area :description, class: "form-control", id: "new-rock-description", required: true %>
             </div>
             <div class="form-group">
                 <label for="new-rock-image">Select Rock Image File</label>

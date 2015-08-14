@@ -6,7 +6,13 @@ class RockCommentsController < ApplicationController
         new_rock_comment = RockComment.create(rock_comment_params)
         new_rock_comment.user = current_user
         new_rock_comment.save
-        redirect_to rock_path(new_rock_comment.rock)
+        if new_rock_comment.errors.blank?
+            redirect_to rock_path(new_rock_comment.rock)
+        else
+            @rock_comment = new_rock_comment
+            @rock = new_rock_comment.rock
+            render :new
+        end
     end
 
     def new
