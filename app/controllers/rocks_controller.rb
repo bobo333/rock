@@ -3,7 +3,7 @@ class RocksController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :my_rocks]
 
     def index
-        @rocks = Rock.all
+        @rocks = Rock.all.order(created_at: :desc)
     end
 
     def my_rocks

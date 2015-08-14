@@ -14,7 +14,7 @@
         <div class="col-sm-4">Created by: <%= rock.user.name %></div>
     </div>
     <div class="row">
-        <div class="col-sm-4"><%= image_tag rock.image.url(:thumbnail) %></div>
+        <div class="col-sm-4"><a href="<%= rock_path(rock) %>"><%= image_tag rock.image.url(:thumbnail), class: "img-responsive" %></a></div>
     </div>
     <div class="row">
         <div class="col-sm-4"><%= rock.description %></div>

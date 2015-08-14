@@ -15,7 +15,7 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-12"><%= image_tag @rock.image.url %></div>
+    <div class="col-sm-12"><%= image_tag @rock.image.url, class: "img-responsive" %></div>
 </div>
 
 <% @rock.rock_comments.order(:created_at).each do |comment| %>
