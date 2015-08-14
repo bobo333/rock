@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'rocks#index'
 
   resources :rocks, only: [:index, :show, :new, :create]
+  get 'my-rocks', to: 'rocks#my_rocks', as: 'my_rocks'
   resources :rock_comments, only: [:new, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

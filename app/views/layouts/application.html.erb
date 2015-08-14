@@ -26,6 +26,11 @@
             <%= link_to "All Rocks", rocks_path %>
             &middot;
             <%= link_to "New Rock", new_rock_path %>
+            
+            <% if current_user.present? %>
+                &middot;
+                <%= link_to "My Rocks", my_rocks_path %>
+            <% end %>
         </div>
         <div class="col-sm-6 text-right">
             <% if current_user.present? %>

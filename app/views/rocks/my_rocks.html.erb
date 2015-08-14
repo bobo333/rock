@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h2>These are your fucking rocks</h2>
+    </div>
+</div>
+
+<% @rocks.each do |rock|%>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3><%= link_to rock.title, rock_path(rock) %></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><%= image_tag rock.image.url(:thumbnail) %></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><%= rock.description %></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <%= pluralize(rock.rock_comments.length, "comment") %>
+        </div>
+    </div>
+<% end %>
+
+<% if @rocks.length == 0 %>
+    <%= link_to "Upload", new_rock_path %> some fucking rocks!
+<% end %>
