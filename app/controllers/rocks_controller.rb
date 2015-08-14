@@ -18,7 +18,12 @@ class RocksController < ApplicationController
         new_rock = Rock.create(rock_params)
         new_rock.user = current_user
         new_rock.save
-        redirect_to action: :index
+        if new_rock.errors.blank?
+            redirect_to action: :index
+        else
+            @rock = new_rock
+            render :new
+        end
     end
 
     def new

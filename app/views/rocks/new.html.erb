@@ -4,6 +4,14 @@
     </div>
 </div>
 
+<% if @rock.errors.present? %>
+    <ul>
+        <% @rock.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+<% end %>
+
 
 <div class="row">
     <div class="col-sm-4">
