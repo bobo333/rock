@@ -1,11 +1,27 @@
-THESE ARE SOME ROCKS
+<div class="row">
+    <div class="col-sm-12">
+        <h2>These are some fucking rocks</h2>
+    </div>
+</div>
 
 <% @rocks.each do |rock|%>
-    <div>
-        <div><%= link_to rock.title, rock_path(rock) %></div>
-        <div><%= rock.description %></div>
-        <div><%= rock.user.email %></div>
-        <div><%= image_tag rock.image.url(:thumbnail) %></div>
-        <div><%= link_to "Comment", new_rock_comment_path(rock_id: rock.id) %></div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3><%= link_to rock.title, rock_path(rock) %></h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">Created by: <%= rock.user.email %></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><%= image_tag rock.image.url(:thumbnail) %></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"><%= rock.description %></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <%= pluralize(rock.rock_comments.length, "comment") %>
+        </div>
     </div>
 <% end %>

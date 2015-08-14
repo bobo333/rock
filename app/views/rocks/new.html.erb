@@ -1,10 +1,29 @@
-this is a new rock
+<div class="row">
+    <div class="col-sm-4">
+        <h2>This is a new fucking rock</h2>
+    </div>
+</div>
 
-<%= form_for @rock, url: {action: "create"}, html: {multipart: true} do |f| %>
 
-    <%= f.text_field :title %>
-    <%= f.text_area :description %>
-    <%= f.file_field :image %>
-    <%= f.submit "Create" %>
+<div class="row">
+    <div class="col-sm-4">
+        <%= form_for @rock, url: {action: "create"}, html: {multipart: true} do |f| %>
 
-<% end %>
+            <div class="form-group">
+                <label for="new-rock-title">Rock Title</label>
+                <%= f.text_field :title, class: "form-control", id: "new-rock-title" %>
+            </div>
+            <div class="form-group">
+                <label for="new-rock-description">Rock Description</label>
+                <%= f.text_area :description, class: "form-control", id: "new-rock-description" %>
+            </div>
+            <div class="form-group">
+                <label for="new-rock-image">Select Rock Image File</label>
+                <%= f.file_field :image, id: "new-rock-image" %>
+            </div>
+            <%= f.submit "Create", class: "btn btn-default", id: "new-rock-submit" %>
+            <%= link_to "Cancel", rocks_path %>
+
+        <% end %>
+    </div>
+</div>
